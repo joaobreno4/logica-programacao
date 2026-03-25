@@ -1,0 +1,23 @@
+<div class="card shadow-sm m-2" style="width: 18rem; border-radius: 12px;">
+    <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <span class="badge bg-primary mb-2">@Category</span>
+        </div>
+        <h5 class="card-title font-weight-bold">@Title</h5>
+        <p class="card-text text-muted">@Location</p>
+        <p class="small text-secondary">📅 @Date.ToShortDateString()</p>
+        <button class="btn btn-outline-dark w-100 mt-2" @onclick="HandleClick">Ver Detalhes</button>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string Title { get; set; } = "Evento";
+    [Parameter] public string Category { get; set; } = "Tech";
+    [Parameter] public string Location { get; set; } = "Rio de Janeiro";
+    [Parameter] public DateTime Date { get; set; } = DateTime.Now;
+
+    private void HandleClick()
+    {
+        Console.WriteLine($"Interesse no evento: {Title}");
+    }
+}

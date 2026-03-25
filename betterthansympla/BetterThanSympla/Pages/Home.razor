@@ -1,0 +1,56 @@
+@page "/"
+@using BetterThanSympla.Components
+
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold">Better Than Sympla 🚀</h1>
+        <p class="lead">O hub onde os eventos encontram você, João Breno.</p>
+        <hr class="my-4" style="width: 50%; margin: 0 auto;">
+    </div>
+
+    <div class="row">
+        <div class="col-12 mb-3">
+            <h3 class="fw-light">Eventos Recomendados</h3>
+        </div>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center">
+        <EventCard 
+            Title="DevOps Summit 2026" 
+            Category="DevOps" 
+            Location="Rio de Janeiro" 
+            Date="@DateTime.Now.AddDays(15)" />
+
+        <EventCard 
+            Title="C# & Blazor Workshop" 
+            Category="Front-end" 
+            Location="Online" 
+            Date="@DateTime.Now.AddDays(5)" />
+
+        <EventCard 
+            Title="Cybersecurity Meetup" 
+            Category="Segurança" 
+            Location="São Paulo" 
+            Date="@DateTime.Now.AddDays(20)" />
+            
+        <EventCard 
+            Title="Agilidade e Inovação" 
+            Category="Gestão" 
+            Location="Híbrido" 
+            Date="@DateTime.Now.AddDays(30)" />
+    </div>
+
+    <div class="text-center mt-5 p-4 border-top">
+        <button class="btn btn-outline-success" @onclick="ShowAlert">
+            Testar Conexão com o Hub
+        </button>
+    </div>
+</div>
+
+@code {
+    private void ShowAlert()
+    {
+        // Aparece no Console do Navegador (F12)
+        Console.WriteLine("Conexão C# estabelecida com sucesso no Front-end!");
+    }
+}

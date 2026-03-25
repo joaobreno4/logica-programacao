@@ -16,12 +16,10 @@
 <!-- ── 1. Hero ────────────────────────────────────────── -->
 <section class="hero" aria-label="Seção principal">
     <div class="hero__bg-glow" aria-hidden="true"></div>
-    <div class="hero__bg-grid" aria-hidden="true"></div>
+
 
     <div class="container hero__content">
-        <div class="hero__eyebrow animate-fade-in">
-            <span class="badge badge--primary">✦ Eventos em destaque</span>
-        </div>
+
 
         <h1 class="hero__title animate-fade-in stagger-1">
             Descubra eventos<br />
@@ -50,44 +48,13 @@
             </button>
         </div>
 
-        <div class="hero__stats animate-fade-in stagger-4" aria-label="Estatísticas da plataforma">
-            <div class="hero__stat">
-                <strong>8+</strong>
-                <span>Eventos disponíveis</span>
-            </div>
-            <div class="hero__stat-divider" aria-hidden="true"></div>
-            <div class="hero__stat">
-                <strong>7</strong>
-                <span>Categorias</span>
-            </div>
-            <div class="hero__stat-divider" aria-hidden="true"></div>
-            <div class="hero__stat">
-                <strong>4</strong>
-                <span>Estados</span>
-            </div>
-        </div>
+
     </div>
 </section>
 
-<!-- ── 2. Filtros por categoria ────────────────────────── -->
+<!-- ── 2. Lista de Eventos ────────────────────────── -->
 <section class="discover-section section">
     <div class="container">
-
-        <!-- Chips de categoria -->
-        <div class="filter-bar animate-fade-in" role="group" aria-label="Filtrar por categoria">
-            <button class="chip @(activeCategory == "Todos" ? "chip--active" : "")"
-                    @onclick='() => SetCategory("Todos")'>
-                📅 Todos
-            </button>
-            @foreach (var cat in categories)
-            {
-                <button class="chip @(activeCategory == cat.Name ? "chip--active" : "")"
-                        @onclick="() => SetCategory(cat.Name)"
-                        aria-pressed="@(activeCategory == cat.Name)">
-                    @cat.Icon @cat.Name
-                </button>
-            }
-        </div>
 
         <!-- ── 3. Cabeçalho da seção + contagem ─────────── -->
         <div class="section-header">
