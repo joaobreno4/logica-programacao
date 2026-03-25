@@ -1,4 +1,4 @@
-@page "/event/{Id:int}"
+@page "/event/{Id}"
 @using Btfs.Models
 @using Btfs.Services
 @inject EventService EventSvc
@@ -118,7 +118,7 @@ else
 
 @code {
     [Parameter]
-    public int Id { get; set; }
+    public string Id { get; set; } = "";
 
     private Event? Evt;
     private bool isLoading = true;

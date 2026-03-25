@@ -12,7 +12,7 @@ public class EventService
 
     public EventService()
     {
-        // IDs como strings (UUIDs simulados)
+        // Categorias com IDs fixos para o mock
         var catShows = new Category { Id = "c111", Name = "Shows" };
         var catFest = new Category { Id = "c222", Name = "Festivais" };
         var catEsporte = new Category { Id = "c333", Name = "Esportes" };
@@ -78,8 +78,83 @@ public class EventService
                 Categories = [catTech],
                 TicketTypes =
                 [
-                    new() { Id = "t5", EventId = "e333", Name = "Estudante", Price = 89m, QuantityAvailable = 300, SalesStartDate = DateTime.Now.AddDays(-60), SalesEndDate = new DateTime(2025, 6, 13) },
+                    new() { Id = "t5", EventId = "e333", Name = "Profissional", Price = 249m, QuantityAvailable = 400, SalesStartDate = DateTime.Now.AddDays(-60), SalesEndDate = new DateTime(2025, 6, 13) },
                 ]
+            },
+            new()
+            {
+                Id = "e444",
+                Title = "Sabores do Brasil – Festival Gastronômico",
+                Description = "Reúne os melhores chefs do país em um festival de 4 dias.",
+                CoverImageUrl = "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+                StartDate = new DateTime(2025, 7, 18, 11, 0, 0),
+                EndDate   = new DateTime(2025, 7, 21, 22, 0, 0),
+                CreatedAt = new DateTime(2025, 3, 1),
+                IsOnline  = false,
+                Status    = "publicado",
+                Location  = new Venue { Id = "v444", Name = "Parque do Ibirapuera", City = "São Paulo", State = "SP" },
+                Categories = [catGastro],
+                TicketTypes = [new() { Id = "t6", EventId = "e444", Name = "Geral", Price = 45m, QuantityAvailable = 1000 }]
+            },
+            new()
+            {
+                Id = "e555",
+                Title = "Maratona do Rio de Janeiro",
+                Description = "A maratona mais linda do Brasil! 42km pela Zona Sul carioca.",
+                CoverImageUrl = "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80",
+                StartDate = new DateTime(2025, 6, 22, 6, 0, 0),
+                EndDate   = new DateTime(2025, 6, 22, 14, 0, 0),
+                CreatedAt = new DateTime(2025, 1, 15),
+                IsOnline  = false,
+                Status    = "publicado",
+                Location  = new Venue { Id = "v555", Name = "Aterro do Flamengo", City = "Rio de Janeiro", State = "RJ" },
+                Categories = [catEsporte],
+                TicketTypes = [new() { Id = "t7", EventId = "e555", Name = "Inscrição", Price = 180m, QuantityAvailable = 3000 }]
+            },
+            new()
+            {
+                Id = "e666",
+                Title = "Hamlet – Companhia Brasileira de Teatro",
+                Description = "Uma releitura contemporânea de Shakespeare com elenco premiado.",
+                CoverImageUrl = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+                StartDate = new DateTime(2025, 8, 5, 20, 0, 0),
+                EndDate   = new DateTime(2025, 8, 5, 22, 30, 0),
+                CreatedAt = new DateTime(2025, 4, 10),
+                IsOnline  = false,
+                Status    = "publicado",
+                Location  = new Venue { Id = "v666", Name = "Teatro Municipal", City = "Curitiba", State = "PR" },
+                Categories = [catTeatro],
+                TicketTypes = [new() { Id = "t8", EventId = "e666", Name = "Plateia", Price = 60m, QuantityAvailable = 150 }]
+            },
+            new()
+            {
+                Id = "e777",
+                Title = "Bienal de Arte Urbana SP",
+                Description = "Uma semana celebrando a arte urbana brasileira.",
+                CoverImageUrl = "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80",
+                StartDate = new DateTime(2025, 9, 12, 10, 0, 0),
+                EndDate   = new DateTime(2025, 9, 19, 20, 0, 0),
+                CreatedAt = new DateTime(2025, 5, 1),
+                IsOnline  = false,
+                Status    = "publicado",
+                Location  = new Venue { Id = "v777", Name = "Vila Madalena", City = "São Paulo", State = "SP" },
+                Categories = [catArte],
+                TicketTypes = [new() { Id = "t9", EventId = "e777", Name = "Grátis", Price = 0m, QuantityAvailable = 5000 }]
+            },
+            new()
+            {
+                Id = "e888",
+                Title = "Rock in Rio 2026 – Warm Up Online",
+                Description = "Entrevistas exclusivas e behind-the-scenes do Rock in Rio 2026.",
+                CoverImageUrl = "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800&q=80",
+                StartDate = new DateTime(2025, 12, 1, 19, 0, 0),
+                EndDate   = new DateTime(2025, 12, 1, 22, 0, 0),
+                CreatedAt = new DateTime(2025, 6, 20),
+                IsOnline  = true,
+                Status    = "publicado",
+                Location  = null,
+                Categories = [catShows, catFest],
+                TicketTypes = [new() { Id = "t10", EventId = "e888", Name = "Online", Price = 0m, QuantityAvailable = 99999 }]
             }
         ];
     }
